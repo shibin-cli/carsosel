@@ -7,8 +7,8 @@
     <meta name="viewport"
         content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
     <title>Carousel</title>
-    <link rel="stylesheet" href="./css/carousel.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/shibin-cli/carsousel@master/src/css/carousel.css">
+    <link rel="stylesheet" href="./demo/style.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             淡入
             <carousel :time="3" effect="fade" :autoplay="true" :loop="true">
                 <carousel-list>
-                    <carousel-item v-for="(item,index) in list" @click="openDetail">
+                    <carousel-item v-for="(item,index) in list">
                         <img :src="item.src" />
                     </carousel-item>
                 </carousel-list>
@@ -29,7 +29,7 @@
             分页器
             <carousel :time="5" effect="slide" :autoplay="true" :loop="true">
                 <carousel-list>
-                    <carousel-item v-for="(item,index) in list" @click="openDetail">
+                    <carousel-item v-for="(item,index) in list">
                         <img :src="item.src" />
                     </carousel-item>
                 </carousel-list>
@@ -41,7 +41,7 @@
             不循环
             <carousel :time="3" effect="slide" :autoplay="false" :loop="false">
                 <carousel-list>
-                    <carousel-item v-for="(item,index) in list" @click="openDetail">
+                    <carousel-item v-for="(item,index) in list">
                         <img :src="item.src" />
                     </carousel-item>
                 </carousel-list>
@@ -53,10 +53,9 @@
     {
         "imports": {
             "vue": "https://cdn.jsdelivr.net/npm/vue@3.1.4/dist/vue.esm-browser.js",
-            "carousel": "https://cdn.jsdelivr.net/gh/shibin-cli/carousel@1.0.0/src/js/index.js"
+            "carousel": "https://cdn.jsdelivr.net/gh/shibin-cli/carsousel@master/src/js/index.js"
         }
     }
 </script>
 <script src="./demo/main.js" type="module"></script>
-
 </html>

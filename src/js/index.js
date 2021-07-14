@@ -88,10 +88,9 @@ function useChangeActiveIndex({
         container.value.addEventListener('mouseout', autoSlide)
         // 获取轮播长度
         len.value = listEl.value.nextSibling.children.length
-        if (props.effect === 'slide'&&props.loop) {
+        if (props.effect === 'slide' && props.loop) {
             len.value = len.value - 2
         }
-        console.log(len.value)
     })
 
     onUnmounted(() => {
@@ -112,13 +111,13 @@ function useChangeActiveIndex({
 
 const Carousel = {
     name: 'carousel',
-    components:{
+    components: {
         CarouselPagination
     },
     props: {
         time: {
             type: Number,
-            default: 2
+            default: 5
         },
         effect: {
             type: String,
@@ -170,11 +169,11 @@ const Carousel = {
                 class: 'carousel-control carousel-control-next',
                 onClick: debounce(nextActive, 300)
             }, '>'),
-            context.slots.pagination?h(CarouselPagination,{
+            context.slots.pagination ? h(CarouselPagination, {
                 activeIndex,
                 len,
                 setActive
-            }):''
+            }) : ''
         ])
     }
 }

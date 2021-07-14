@@ -87,7 +87,7 @@ export default {
                 startX = e.touches[0].clientX
             },
             onTouchmovePassive(e) {
-                if(effect!=='slide'){
+                if (effect !== 'slide') {
                     return
                 }
                 let moveX = e.touches[0].clientX

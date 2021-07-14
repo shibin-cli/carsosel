@@ -6,12 +6,10 @@ export default {
     name: 'carousel-pagination',
     props: {
         len: {
-            type: Number,
-            default: 0
+            required: true
         },
         activeIndex: {
-            type: Number,
-            default: 0
+            required: true
         },
         setActive: {
             type: Function,
@@ -19,7 +17,7 @@ export default {
         }
     },
     setup(props) {
-        function getChildren(){
+        function getChildren() {
             let children = []
             for (let i = 0; i < props.len.value; i++) {
                 children.push(h('div', {
@@ -27,16 +25,16 @@ export default {
                         'carousel-pagination-item': true,
                         'carousel-pagination-item-active': i === props.activeIndex.value
                     },
-                    onClick(){
+                    onClick() {
                         props.setActive(i)
                     }
                 }))
             }
             return children
         }
-        
+
         return () => h('div', {
             class: 'carousel-pagination'
-        },getChildren())
+        }, getChildren())
     }
 }
