@@ -50,7 +50,6 @@ function useChangeActiveIndex({
         } else {
             activeIndex.value--
         }
-        console.log(activeIndex.value)
     }
 
     function setActive(index) {
